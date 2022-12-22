@@ -23,6 +23,10 @@
     padding: 0 0;
 }
 
+.nav-bar .nav-list a {
+    cursor: pointer;
+}
+
 .nav-bar .nav-list a li {
     padding: 0 1vw;
     font-size: 1.25vw;
