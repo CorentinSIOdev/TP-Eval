@@ -6,11 +6,11 @@
         {# Titre de la fenêtre #}
         <title>{% block title %}leboncoin{% endblock %}</title>
         {# Icône de la fenêtre #}
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="icon" href="{{ asset('assets/images/leboncoin_logo.svg') }}">
         {# Fichiers CSS #}
         {% block stylesheets %}
             {# Index #}
-            <link href="{{ asset('assets/css/index/index.css') }}" rel="stylesheet">
+            <link href="{{ asset('assets/css/base/base.css') }}" rel="stylesheet">
         {% endblock %}
 
         {# Fichiers JS #}
@@ -19,6 +19,23 @@
         {% endblock %}
     </head>
     <body>
+        {# Barre de navigation #}
+        {% block header %}
+            <div class="nav-bar">
+                <div class="logo">leboncoin</div>
+                <ul class="nav-list">
+                    <a>
+                        <li>Déposer une annonce</li>
+                    </a>
+                    <a>
+                        <li>Se connecter</li>
+                    </a>
+                    <a>
+                        <li>S'inscrire</li>
+                    </a>
+                </ul>
+            </div>
+        {% endblock %}
         {# Corps des pages #}
         {% block body %}{% endblock %}
     </body>
