@@ -1,0 +1,12 @@
+.footer {
+    padding: 4vh 20vh;
+    background-color: white;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    text-align: center;
+    font-size: 1.25vw;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
