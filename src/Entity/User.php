@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['username'], message: "Il existe déjà un compte avec ce nom d'utilisateur")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -26,11 +29,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
-
+    
     #[ORM\Column]
+    /**
+     * @Gedmo\Timestampable(on="create")
+     */
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    /**
+     * @Gedmo\Timestampable(on="update")
+     */
     private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int
@@ -121,23 +130,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->created_at;
     }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
+    
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
-    {
-        $this->updated_at = $updated_at;
-
-        return $this;
     }
 }
