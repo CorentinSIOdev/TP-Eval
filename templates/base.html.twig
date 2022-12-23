@@ -22,15 +22,17 @@
         {# Barre de navigation #}
         {% block header %}
             <div class="nav-bar">
-                <div class="logo">leboncoin</div>
+                <a href="{{ path('route_accueil') }}">
+                    <div class="logo">leboncoin</div>
+                </a>
                 <ul class="nav-list">
-                    <a href"">
+                    <a href="">
                         <li>Déposer une annonce</li>
                     </a>
-                    <a href"">
+                    <a href="">
                         <li>Se connecter</li>
                     </a>
-                    <a href"">
+                    <a href="{{ path('route_inscription') }}">
                         <li>S'inscrire</li>
                     </a>
                 </ul>
