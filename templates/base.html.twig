@@ -26,15 +26,37 @@
                     <div class="logo">leboncoin</div>
                 </a>
                 <ul class="nav-list">
-                    <a href="">
-                        <li>Déposer une annonce</li>
-                    </a>
-                    <a href="">
-                        <li>Se connecter</li>
-                    </a>
-                    <a href="{{ path('route_inscription') }}">
-                        <li>S'inscrire</li>
-                    </a>
+                    {% if app.user == null %}
+                        <a href="{{ path('route_connexion') }}">
+                            <li>Déposer une annonce</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="">
+                            <li>Déposer une annonce</li>
+                        </a>
+                    {% endif %}
+
+                    {% if app.user == null %}
+                        <a href="{{ path('route_connexion') }}">
+                            <li>Se connecter</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user == null %}
+                        <a href="{{ path('route_inscription') }}">
+                            <li>S'inscrire</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="{{ path('route_deconnexion') }}">
+                            <li>Bonjour, {{ app.user.username }}</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="{{ path('route_deconnexion') }}">
+                            <li>Se déconnecter</li>
+                        </a>
+                    {% endif %}
                 </ul>
             </div>
         {% endblock %}
