@@ -13,7 +13,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class AnnonceController extends AbstractController
 {
     #[Route('/ajout/annonce', name: 'route_add_annonce')]
-    public function index(Request $request, ManagerRegistry $doctrine): Response
+    public function ajoutAnnonce(Request $request, ManagerRegistry $doctrine): Response
     {   
         $entityManager = $doctrine->getManager();
         $formAddAnnonce = new Annonce();
@@ -28,7 +28,7 @@ class AnnonceController extends AbstractController
 
             $this->addFlash(
                 "successAdd",
-                "Annonce ajouté avec succès."
+                "Votre annonce a été ajoutée avec succès."
             );
 
             return $this->redirectToRoute('route_accueil');

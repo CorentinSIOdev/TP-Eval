@@ -11,5 +11,34 @@
                 {{ message }}
             </div>
         {% endfor %}
+        <div class="card_annonce">
+            {% for annonces in annonce %}
+            <div class="annonces_box">
+                <div class="img_annonce">
+                    <img src="{{ asset('assets/images/image-notfound.webp') }}"></img>
+                </div>
+                <div class="details_annonce">
+                    <div class="titre_annonce">
+                        {{ annonces.title }}
+                    </div>
+
+                    <div class="prix_annonce">
+                        {{ annonces.price }} €
+                    </div>
+
+                    <div class="desc_annonce">
+                        {{ annonces.description }}
+                    </div>
+
+                    <div class="cat_annonce">
+                        Catégorie : {{ annonces.categorie.title }}
+                    </div>
+                </div>
+                <div class="date_annonce">
+                        {{ annonces.updatedat.format('d/m/Y') }} à {{ annonces.updatedat.format('g:i:s') }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

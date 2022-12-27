@@ -3,8 +3,77 @@
 }
 .accueil .message_success {
     margin-top: 6vh;
+    margin-bottom: 6vh;
     font-size: 1.5vw;
     text-align: center;
     font-family: "Raleway";
     color: rgb(245 107 42);
+}
+
+.accueil .card_annonce {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.accueil .annonces_box {
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    width: auto;
+    background-color: rgb(245, 107, 42, 0.1);
+    height: auto;
+    width: 20vw;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.accueil .annonces_box .details_annonce {
+    padding: 2.5vh 1.5vw;
+}
+
+.accueil .annonces_box .img_annonce img {
+    width: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.accueil .annonces_box .titre_annonce {
+    font-size: 1.8vw;
+    color: rgb(245 107 42);
+    font-family: "Raleway";
+    padding-bottom: 2.5vh;
+}
+
+.accueil .annonces_box .prix_annonce {
+    font-size: 1.4vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 0.5vh;
+}
+
+.accueil .annonces_box .desc_annonce {
+    font-size: 1.2vw;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 0.5vh;
+}
+
+.accueil .annonces_box .cat_annonce {
+    font-size: 1.2vw;
+    color: black;
+    padding-bottom: 0.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.accueil .annonces_box .date_annonce {
+    font-size: 1.2vw;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(245, 106, 42, 0.2);
+    font-weight: bold;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 2.5vh 1.5vw;
 }
