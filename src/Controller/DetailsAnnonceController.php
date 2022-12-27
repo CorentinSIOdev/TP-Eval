@@ -16,6 +16,7 @@ class DetailsAnnonceController extends AbstractController
         $repository = $doctrine->getManager()->getRepository(Annonce::class);
         $detailsAnnonce = $repository->find($id);
 
+        $idAnnonce = $detailsAnnonce->getId();
         $titre = $detailsAnnonce->getTitle();
         $desc = $detailsAnnonce->getDescription();
         $price = $detailsAnnonce->getPrice();
@@ -26,6 +27,7 @@ class DetailsAnnonceController extends AbstractController
 
         return $this->render('details_annonce/index.html.twig', [
             'controller_name' => 'DetailsAnnonceController',
+            'idAnnonce' => $idAnnonce,
             'titre' => $titre,
             'desc' => $desc,
             'prix' => $price,
