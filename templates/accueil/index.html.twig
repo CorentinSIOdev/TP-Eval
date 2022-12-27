@@ -5,5 +5,11 @@
 
 {# Corps de la page #}
 {% block body %}
-
+    <div class="accueil">
+        {% for message in app.flashes("successAdd") %}
+            <div class="message_success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

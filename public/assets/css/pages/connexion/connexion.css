@@ -46,3 +46,11 @@
     cursor: pointer;
     border-width: 2px;
 }
+
+.connexion .message_error {
+    margin-top: 6vh;
+    font-size: 1.5vw;
+    text-align: center;
+    font-family: "Raleway";
+    color: rgb(245 107 42);
+}

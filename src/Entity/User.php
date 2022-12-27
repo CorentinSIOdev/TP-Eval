@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private ?\DateTimeImmutable $updated_at = null;
 
-    #[ORM\OneToMany(mappedBy: 'idUser', targetEntity: Annonce::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Annonce::class)]
     private Collection $annonces;
 
     public function __construct()
@@ -158,7 +158,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->annonces->contains($annonce)) {
             $this->annonces->add($annonce);
-            $annonce->setIdUser($this);
+            $annonce->setUser($this);
         }
 
         return $this;
@@ -168,8 +168,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->annonces->removeElement($annonce)) {
             // set the owning side to null (unless already changed)
-            if ($annonce->getIdUser() === $this) {
-                $annonce->setIdUser(null);
+            if ($annonce->getUser() === $this) {
+                $annonce->setUser(null);
             }
         }
 

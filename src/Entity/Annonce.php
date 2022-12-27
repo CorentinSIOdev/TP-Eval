@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AnnonceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: AnnonceRepository::class)]
 class Annonce
@@ -23,16 +24,22 @@ class Annonce
     private ?float $price = null;
 
     #[ORM\Column]
+    /**
+     * @Gedmo\Timestampable(on="create")
+     */
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    /**
+     * @Gedmo\Timestampable(on="update")
+     */
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'annonces')]
-    private ?User $idUser = null;
+    private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'annonces')]
-    private ?Categorie $idCategorie = null;
+    private ?Categorie $categorie = null;
 
     public function getId(): ?int
     {
@@ -80,45 +87,31 @@ class Annonce
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    public function getUser(): ?User
     {
-        $this->updated_at = $updated_at;
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getIdUser(): ?User
+    public function getCategorie(): ?Categorie
     {
-        return $this->idUser;
+        return $this->categorie;
     }
 
-    public function setIdUser(?User $idUser): self
+    public function setCategorie(?Categorie $categorie): self
     {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    public function getIdCategorie(): ?Categorie
-    {
-        return $this->idCategorie;
-    }
-
-    public function setIdCategorie(?Categorie $idCategorie): self
-    {
-        $this->idCategorie = $idCategorie;
+        $this->categorie = $categorie;
 
         return $this;
     }

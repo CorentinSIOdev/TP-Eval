@@ -18,7 +18,7 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\OneToMany(mappedBy: 'idCategorie', targetEntity: Annonce::class)]
+    #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Annonce::class)]
     private Collection $annonces;
 
     public function __construct()
@@ -55,7 +55,7 @@ class Categorie
     {
         if (!$this->annonces->contains($annonce)) {
             $this->annonces->add($annonce);
-            $annonce->setIdCategorie($this);
+            $annonce->setCategorie($this);
         }
 
         return $this;
@@ -65,8 +65,8 @@ class Categorie
     {
         if ($this->annonces->removeElement($annonce)) {
             // set the owning side to null (unless already changed)
-            if ($annonce->getIdCategorie() === $this) {
-                $annonce->setIdCategorie(null);
+            if ($annonce->getCategorie() === $this) {
+                $annonce->setCategorie(null);
             }
         }
 

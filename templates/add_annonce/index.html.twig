@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}leboncoin | Créer une annonce{% endblock %}
+
+{% block body %}
+    <div class="add_annonce">
+        <h1>Ajouter une annonce</h1>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="titre">
+                {{ form_label(form.title, "Titre de l'annonce") }}
+            </div>
+            {{ form_widget(form.title) }}
+            
+            <div class="titre">
+                {{ form_label(form.description, "Description de l'annonce") }}
+            </div>
+            {{ form_widget(form.description) }}
+            
+            <div class="titre">
+                {{ form_label(form.price, "Prix du produit") }}
+            </div>
+            {{ form_widget(form.price) }}
+
+            <div class="titre">
+                {{ form_label(form.price, "Catégorie du produit") }}
+            </div>
+            {{ form_widget(form.categorie) }}
+
+            <div class="titre" style="display: none;">
+                {{ form_label(form.user, "") }}
+            </div>
+            {{ form_widget(form.user) }}
+
+            <button type="submit" class="btn">Ajouter l'annonce</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
