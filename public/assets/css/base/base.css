@@ -1,6 +1,8 @@
 @import url("../navbar/navbar.css");
 @import url("../pages/inscription/inscription.css");
 @import url("../pages/connexion/connexion.css");
+@import url("../pages/ajout_annonce/ajout_annonce.css");
+@import url("../pages/accueil/accueil.css");
 @import url("../footer/footer.css");
 
 * {
