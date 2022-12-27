@@ -35,10 +35,14 @@
                     Date de modification : {{ date_update.format('d/m/Y') }}
                 </div>
 
-                <div class="buttons_interraction">
-                    <button class="button_update">Mettre à jour</button>
-                    <button class="button_delete">Supprimer</button>
-                </div>
+                {% if app.user is not null %}
+                    {% if app.user.id == user.id %}
+                        <div class="buttons_interraction">
+                            <button class="button_update">Mettre à jour</button>
+                            <button class="button_delete">Supprimer</button>
+                        </div>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
