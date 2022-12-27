@@ -50,7 +50,7 @@ class AddAnnonceFormType extends AbstractType
             ->add('user', EntityType::class, [
                 'attr' => array('class' => 'user'),
                 'class' => User::class,
-                'choice_label' => 'id'
+                'choice_label' => 'username'
             ])
         ;
     }

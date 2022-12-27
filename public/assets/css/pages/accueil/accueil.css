@@ -26,6 +26,7 @@
     width: 20vw;
     object-fit: cover;
     border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .accueil .annonces_box .details_annonce {

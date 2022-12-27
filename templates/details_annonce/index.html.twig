@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}leboncoin | Détails de : {{ titre }} {% endblock %}
+
+{% block body %}
+    <div class="details_annonce_card">
+        <h1>Détails de l'annonce {{ titre }}</h1>
+
+        <div class="annonces_box">
+            <div class="img_annonce">
+                <img src="{{ asset('assets/images/image-notfound.webp') }}"></img>
+            </div>
+            <div class="details">
+                <div class="prix_annonce">
+                    Prix : {{ prix }} €
+                </div>
+
+                <div class="desc_annonce">
+                    Description : {{ desc }}
+                </div>
+
+                <div class="cat_annonce">
+                    Catégorie : {{ cat.title }}
+                </div>
+
+                <div class="user_annonce">
+                    Utilisateur : {{ user.username }}
+                </div>
+
+                <div class="date_annonce">
+                    Date de publication : {{ date_create.format('d/m/Y') }}
+                </div>
+
+                <div class="date_annonce">
+                    Date de modification : {{ date_update.format('d/m/Y') }}
+                </div>
+
+                <div class="buttons_interraction">
+                    <button class="button_update">Mettre à jour</button>
+                    <button class="button_delete">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
