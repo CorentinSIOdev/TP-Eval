@@ -35,6 +35,12 @@ class Annonce
      */
     private ?\DateTimeImmutable $updated_at = null;
 
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    private ?Categorie $categorie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -84,5 +90,29 @@ class Annonce
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updated_at;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
     }
 }
