@@ -11,6 +11,11 @@
                 {{ message }}
             </div>
         {% endfor %}
+        {% for message in app.flashes("successDelete") %}
+            <div class="message_success">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="card_annonce">
             {% for annonces in annonce %}
             <a href="{{ path('route_details_annonce', {id: annonces.id}) }}">
