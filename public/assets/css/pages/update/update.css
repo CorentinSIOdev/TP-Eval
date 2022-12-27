@@ -1,8 +1,8 @@
-.add_annonce {
+.update_annonce {
     margin: 10vh 10vw;
 }
 
-.add_annonce h1 {
+.update_annonce h1 {
     text-align: center;
     margin-bottom: 10vh;
     font-size: 2vw;
@@ -10,13 +10,13 @@
     font-family: "Raleway";
 }
 
-.add_annonce .titre {
+.update_annonce .titre {
     font-size: 1.5vw;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
 }
 
-.add_annonce .champ_texte {
+.update_annonce .champ_texte {
    height: 7vh;
    width: 97.25%;
    margin: 3vh 0;
@@ -28,7 +28,7 @@
    font-family: Arial, Helvetica, sans-serif;
 }
 
-.add_annonce .btn {
+.update_annonce .btn {
     margin-top: 3vh;
     background-color: transparent;
     border: 0;
@@ -43,12 +43,12 @@
     color: white;
 }
 
-.add_annonce .btn:hover {
+.update_annonce .btn:hover {
     cursor: pointer;
     border-width: 2px;
 }
 
-.add_annonce .selector {
+.update_annonce .selector {
     height: 9vh;
     width: 100%;
     margin: 3vh 0;
@@ -60,6 +60,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.add_annonce .user {
+.update_annonce .user {
     display: none;
 }
