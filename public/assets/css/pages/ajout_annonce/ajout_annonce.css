@@ -64,3 +64,19 @@
     font-family: "Raleway";
     color: rgb(245 107 42);
 }
+
+.add_annonce .selector {
+    height: 9vh;
+    width: 100%;
+    margin: 3vh 0;
+    padding: 0.5vh 1vw;
+    font-size: 1.5vw;
+    border-radius: 12px;
+    border-width: 1.25px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.add_annonce .user {
+    display: none;
+}

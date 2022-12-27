@@ -3,9 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Annonce;
-use Doctrine\DBAL\Types\DateImmutableType;
+use App\Entity\Categorie;
+use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -40,6 +41,16 @@ class AddAnnonceFormType extends AbstractType
                         'message' => 'Vous devez remplir ce champ.',
                     ]),
                 ],
+            ])
+            ->add('categorie', EntityType::class, [
+                'attr' => array('class' => 'selector'),
+                'class' => Categorie::class,
+                'choice_label' => 'title'
+            ])
+            ->add('user', EntityType::class, [
+                'attr' => array('class' => 'user'),
+                'class' => User::class,
+                'choice_label' => 'id'
             ])
         ;
     }

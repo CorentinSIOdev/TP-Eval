@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 
-class AddAnnonceController extends AbstractController
+class AnnonceController extends AbstractController
 {
     #[Route('/ajout/annonce', name: 'route_add_annonce')]
     public function index(Request $request, ManagerRegistry $doctrine): Response
