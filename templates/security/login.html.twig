@@ -5,16 +5,6 @@
 {% block body %}
 <div class="connexion">
     <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-            </div>
-        {% endif %}
-
         <h1>Formulaire de connexion</h1>
         <label class="titre" for="inputUsername">Nom d'utilisateur</label>
         <input class="champ_texte" type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
@@ -39,6 +29,10 @@
         <button class="btn" type="submit">
             Se connecter
         </button>
+
+        {% if error %}
+            <div class="message_error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
     </form>
 </div>
 {% endblock %}
