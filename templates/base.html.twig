@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {# Méta-données #}
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {# Titre de la fenêtre #}
+        <title>{% block title %}leboncoin{% endblock %}</title>
+        {# Icône de la fenêtre #}
+        <link rel="icon" href="{{ asset('assets/images/leboncoin_logo.svg') }}">
+        {# Fichiers CSS #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {# Index #}
+            <link href="{{ asset('assets/css/base/base.css') }}" rel="stylesheet">
         {% endblock %}
 
+        {# Fichiers JS #}
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+
         {% endblock %}
     </head>
     <body>
+        {# Barre de navigation #}
+        {% block header %}
+            <div class="nav-bar">
+                <a href="{{ path('route_accueil') }}">
+                    <div class="logo">leboncoin</div>
+                </a>
+                <ul class="nav-list">
+                    {% if app.user == null %}
+                        <a href="{{ path('route_connexion') }}">
+                            <li>Déposer une annonce</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="">
+                            <li>Déposer une annonce</li>
+                        </a>
+                    {% endif %}
+
+                    {% if app.user == null %}
+                        <a href="{{ path('route_connexion') }}">
+                            <li>Se connecter</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user == null %}
+                        <a href="{{ path('route_inscription') }}">
+                            <li>S'inscrire</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="{{ path('route_deconnexion') }}">
+                            <li>Bonjour, {{ app.user.username }}</li>
+                        </a>
+                    {% endif %}
+                    {% if app.user != null %}
+                        <a href="{{ path('route_deconnexion') }}">
+                            <li>Se déconnecter</li>
+                        </a>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endblock %}
+        {# Corps des pages #}
         {% block body %}{% endblock %}
+        {# Bas de page #}
+        {% block footer %}
+            <div class="footer">
+                <p>Tous droits réservés.</p>
+            </div>
+        {% endblock %}
     </body>
 </html>
