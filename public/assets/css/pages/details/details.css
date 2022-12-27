@@ -1,0 +1,100 @@
+.details_annonce_card {
+    margin: 10vh 10vw;
+}
+
+.details_annonce_card h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10vh;
+    font-size: 2vw;
+    color: rgb(245 107 42);
+    font-family: "Raleway";
+}
+
+.details_annonce_card .annonces_box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-width: 2px;
+    border-color: black;
+    width: 100%;
+    background-color: rgb(245, 107, 42, 0.1);
+    padding: 5vh 2.5vw;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.details_annonce_card .annonces_box .details {
+    display: block;
+    margin: auto 0;
+}
+
+.details_annonce_card .annonces_box .img_annonce img {
+    width: 40vw;
+    height: 65vh;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.details_annonce_card .annonces_box .prix_annonce {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
+}
+
+.details_annonce_card .annonces_box .desc_annonce {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
+}
+
+.details_annonce_card .annonces_box .cat_annonce {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
+}
+
+.details_annonce_card .annonces_box .user_annonce {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
+}
+
+.details_annonce_card .annonces_box .date_annonce {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
+}
+
+.details_annonce_card .annonces_box .buttons_interraction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details_annonce_card .annonces_box .buttons_interraction button{
+    border-radius: 12px;
+    border-width: 0px;
+    background-color: rgb(245 107 42);
+    font-size: 1.25vw;
+    font-family: "Raleway";
+    padding: 2.5vh 2.5vw;
+    cursor: pointer;
+}
+
+.details_annonce_card .annonces_box .buttons_interraction .button_update {
+    margin-right: 0.5vw;
+}
+
+.details_annonce_card .annonces_box .buttons_interraction .button_delete {
+    margin-left: 0.5vw;
+}
