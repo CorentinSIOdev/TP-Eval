@@ -4,6 +4,7 @@
 @import url("../pages/ajout_annonce/ajout_annonce.css");
 @import url("../pages/accueil/accueil.css");
 @import url("../pages/details/details.css");
+@import url("../pages/update/update.css");
 @import url("../footer/footer.css");
 
 * {
