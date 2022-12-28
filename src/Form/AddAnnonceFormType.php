@@ -47,11 +47,6 @@ class AddAnnonceFormType extends AbstractType
                 'class' => Categorie::class,
                 'choice_label' => 'title'
             ])
-            ->add('user', EntityType::class, [
-                'attr' => array('class' => 'user'),
-                'class' => User::class,
-                'choice_label' => 'username'
-            ])
         ;
     }
 

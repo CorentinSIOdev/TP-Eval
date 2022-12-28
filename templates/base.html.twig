@@ -32,7 +32,7 @@
                         </a>
                     {% endif %}
                     {% if app.user != null %}
-                        <a href="{{ path('route_add_annonce') }}">
+                        <a href="{{ path('route_add_annonce', {id: app.user.id}) }}">
                             <li>Déposer une annonce</li>
                         </a>
                     {% endif %}
