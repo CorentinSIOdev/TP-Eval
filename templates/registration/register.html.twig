@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}leboncoin | Inscription{% endblock %}
+
+{% block body %}
+    <div class="inscription">
+        <h1>Formulaire d'Inscription</h1>
+
+        {{ form_start(registrationForm) }}
+            <div class="titre">
+                {{ form_label(registrationForm.username, "Nom d'utilisateur") }}
+            </div>
+            {{ form_widget(registrationForm.username) }}
+            
+            <div class="titre">
+                {{ form_label(registrationForm.plainPassword, "Mot de passe") }}
+            </div>
+            {{ form_widget(registrationForm.plainPassword) }}
+            
+            <div class="politique_confidentialite">
+                <div class="titre">
+                    {{ form_label(registrationForm.agreeTerms, "Conditions d'utilisations") }}
+                </div>
+                {{ form_widget(registrationForm.agreeTerms) }}
+            </div>
+
+            <button type="submit" class="btn">Créer mon compte</button>
+
+            <div class="message_erreur">
+                {{ form_errors(registrationForm.plainPassword) }}
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

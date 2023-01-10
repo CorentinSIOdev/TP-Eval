@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}leboncoin | Connexion{% endblock %}
+
+{% block body %}
+<div class="connexion">
+    <form method="post">
+        <h1>Formulaire de connexion</h1>
+        <label class="titre" for="inputUsername">Nom d'utilisateur</label>
+        <input class="champ_texte" type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+        <label class="titre" for="inputPassword">Mot de passe</label>
+        <input class="champ_texte" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
+
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+
+        <button class="btn" type="submit">
+            Se connecter
+        </button>
+
+        {% if error %}
+            <div class="message_error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}leboncoin | Modifier l'annonce : {{ titre }}{% endblock %}
+
+{% block body %}
+    <div class="update_annonce">
+        <h1>Modification de l'annonce {{ titre }}</h1>
+
+        {{ form_start(formUpdate, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="titre">
+                {{ form_label(formUpdate.title, "Titre de l'annonce") }}
+            </div>
+            {{ form_widget(formUpdate.title) }}
+            
+            <div class="titre">
+                {{ form_label(formUpdate.description, "Description de l'annonce") }}
+            </div>
+            {{ form_widget(formUpdate.description) }}
+            
+            <div class="titre">
+                {{ form_label(formUpdate.price, "Prix du produit") }}
+            </div>
+            {{ form_widget(formUpdate.price) }}
+
+            <div class="titre">
+                {{ form_label(formUpdate.price, "Catégorie du produit") }}
+            </div>
+            {{ form_widget(formUpdate.categorie) }}
+
+            <div class="titre" style="display: none;">
+                {{ form_label(formUpdate.user, "") }}
+            </div>
+            {{ form_widget(formUpdate.user) }}
+
+            <button type="submit" class="btn">Modifier l'annonce</button>
+        {{ form_end(formUpdate) }}
+    </div>
+{% endblock %}
